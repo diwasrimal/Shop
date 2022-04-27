@@ -22,90 +22,63 @@
         <div id="items-box">
             <div>
                 <img src="images/shoes.webp">
-                <input type="button" id="addRecordbtn" class="button" value="Add to Cart">
+                <input type="button" data-cloth="shoe" class="button add-to-cart" value="Add to Cart">
             </div>
             <div>
                 <img src="images/jacket.jpg">
-                <input type="button" id="addRecordbtn" class="button" value="Add to Cart">
+                <input type="button" data-cloth="jacket" class="button add-to-cart" value="Add to Cart">
             </div>
             <div>
                 <img src="images/hoodie.jpg">
-                <input type="button" id="addRecordbtn" class="button" value="Add to Cart">
+                <input type="button" data-cloth="hoodie" class="button add-to-cart" value="Add to Cart">
             </div>
             <div>
                 <img src="images/shirt.jpg">
-                <input type="button" id="addRecordbtn" class="button" value="Add to Cart">
+                <input type="button" data-cloth="shirt" class="button add-to-cart" value="Add to Cart">
             </div>
             <div>
                 <img src="images/tshirt.jpg">
-                <input type="button" id="addRecordbtn" class="button" value="Add to Cart">
+                <input type="button" data-cloth="tshirt" class="button add-to-cart" value="Add to Cart">
             </div>
             <div>
                 <img src="images/pant.jpg">
-                <input type="button" id="addRecordbtn" class="button" value="Add to Cart">
+                <input type="button" data-cloth="pant" class="button add-to-cart" value="Add to Cart">
             </div>            
         </div>
+        <!-- Proceed button -->
+        <!-- <button class="button green-btn" id="proceed-btn">Proceed</button> -->
 
-            <h1>Your Cart</h1>
-            <!-- Cart -->
+        <div id="cart-and-submit">
             <div id="cart">
-                <div>
-                    <img src="images/shoes.webp">
-                    <span class="quantity-span">Quantity: <input type="number"></span>
+                <div><h1>Cart</h1></div>
+                <div id="cart-items">
+                    <!-- selected items will come here -->
                 </div>
-                <div>
-                    <img src="images/jacket.jpg">
-                    <span class="quantity-span">Quantity: <input type="number"></span>
-                </div>
-                <div>
-                    <img src="images/hoodie.jpg">
-                    <span class="quantity-span">Quantity: <input type="number"></span>
-                </div>
-                <div>
-                    <img src="images/shirt.jpg">
-                    <span class="quantity-span">Quantity: <input type="number"></span>
-                </div>
-                <div>
-                    <img src="images/tshirt.jpg">
-                    <span class="quantity-span">Quantity: <input type="number"></span>
-                </div>
-                <div>
-                    <img src="images/pant.jpg">
-                    <span class="quantity-span">Quantity: <input type="number"></span>
-                </div> 
+                <button class="button" id="clear-cart">Clear cart</button>
             </div>
-            <button class="button" id="proceed-btn">Proceed</button>
 
             <!-- Form -->
-            <div id="form">
-                <h1>Submit</h1>
-                <form action="insert.php" method="GET" autocomplete="off">
-                    <!-- Inputs goes here -->
-                    <div id="input-box" style="display: flex">
-                        <div id="label-div">
-                            <div>Name:    </div>
-                            <div>Contact:      </div>
-                            <div>Delivery Address:</div>
-                            <div>Email:  </div>
-                        </div>
-                        <div id="input">
-                            <!-- Name -->
-                            <div><input type="text" name="name"  id="name" autofocus required autocomplete="new-password"></div> 
-                            <!-- Age and Education -->
-                            <div><input type="number" name="age" id="age" required autocomplete="new-password"></div>
-                            <div><input type="text" name="edu" id="edu" required autocomplete="new-password"></div>
-                            <!-- Email -->
-                            <div><input type="email" name="email" id="email" required autocomplete="new-password"></div>
-                        </div>
+            <form action="insert.php" method="GET" autocomplete="off">
+                <!-- Inputs goes here -->
+                <div id="input-box" style="display: flex">
+                    <div id="label-div">
+                        <div>Name:</div>
+                        <div>Email:</div>
+                        <div>Delivery Address:</div>
+                        <div>Deadline:</div>
                     </div>
-                </form>
-            </div>
-    </div>
-
-
-
-
-        
+                    <div id="input">
+                        <div><input type="text" name="name"  id="name" required></div> 
+                        <div><input type="email" name="email" id="email" required></div>
+                        <div><input type="text" name="address" id="address" required ></div>
+                        <div><input type="date" name="deadline" id="deadline" required></div>
+                    </div>
+                </div>
+        </div>
+        <div id="submit-div">
+            <input type="submit" id="submit-btn" value="submit" name="submit" class="button green-btn">
+        </div>
+    </form>
     </div>
   </body>
 </html>

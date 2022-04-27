@@ -4,30 +4,38 @@ body {
 }
 /* div {border: 1px solid black;} */
 
-#title {
-    font-size: xxx-large;
-}
+#title {font-size: xxx-large;}
+
 #main {
     text-align: center;
-    padding: 50px;
+    padding: 20px;
 }
+
 #items-box {
     display: flex;
     flex-wrap: wrap;
     gap: 20px 20px;
-    padding: 30px;
+    padding: 20px;
     margin-bottom: 50px;
 }
 #items-box > div {
     display: flex;
     flex-direction: column;
 }
+
 img {
-    width: 200px;
-    min-height: 300px;
+    width: 190px;
+    min-height: 275px;
     object-fit: cover;
     border-radius: 5px;
+}
 
+#cart-and-submit {
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
 }
 
 #cart-and-form {
@@ -37,48 +45,29 @@ img {
 }
 
 #cart {
+    display: flex;
+    align-items: center;
+}
+#cart > div {margin: 15px;}
+
+#cart-items {
     border: 1px solid white;
     display: flex;
-    margin-bottom: 10px;
-}
-#cart div {
-    display: flex;
-    justify-content: left;
-    align-items: center;
     padding: 10px;
+    height: 190px;
+    width: 220px;
+    flex-flow: column wrap;
 }
-.quantity-span {
-    margin-left: 10px;
-}
-.quantity-span input {
-    width: 50px;
-}
-#cart img {
+#cart-items div {margin: 5px;}
+
+#cart-items img {
     width: 50px;
     min-height: 75px;
 }
-
-#form {
-    width: 50%;
-    margin: auto;
-    margin-top: 40px;
-    visibility: hidden;
+#cart-icon {
+    width: 150px;
+    min-height: 100px;
 }
-
-
-#container {
-    display: grid;  
-    gap: 20px 0;
-    /* padding: 100px; */
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    margin: auto;
-    font-family: 'Poppins', sans-serif;
-    color: rgb(32, 27, 28);
-}
-
 #input-box > div {
     display: grid;
     gap: 5px 0;
@@ -87,11 +76,12 @@ img {
     font-weight: bolder;
 }
 
-#label-div div {
-    padding-top: 5px;
+form {
+    border: 1px solid white;
+    padding: 10px;
 }
 
-#name, #age, #edu, #email {
+form input {
     border: 1px solid white;
     background: none;
     border-radius: 5px;
@@ -99,49 +89,35 @@ img {
     padding: 4px 5px;
     transition: box-shadow 0.2s;
 }
+form input:focus {border-color: orange;}
+form input:hover {box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);}
 
-#name:focus, #age:focus, #edu:focus, #email:focus {
-    border-color: orange;
-    /* opacity: 0.1; */
-}
-#name:hover, #age:hover, #edu:hover, #email:hover {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
-}
-
-
-#buttons-div {
-    display: flex;
-}
-#controller {
-    display: flex;
-    justify-content: space-evenly;
-}
 .button {
-    font-family: inherit;
-    font-size: large;
-    padding: 9px 15px;
-    margin: 5px 20px;
-    border-color: rgb(17, 121, 13) ;
-    color: black;
-    font-weight: bold;
-    background-color: powderblue;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.35s, color 0.2s;
-}
-.button:hover { 
-    background-color: rgb(17, 121, 13);
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: rgb(28, 112, 221);
     color: white;
-    
+    border: none;
+    margin-top: 5px;
+    font-family: inherit;
+    padding: 9px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    vertical-align: top;
 }
-.button:active { opacity: 0.5; }
-
-#submit {
-    border-color: rgb(3, 129, 3);
+.button:hover {
+    opacity: 0.8;
 }
-#submit:hover { background-color: rgb(3, 129, 3);}
-
+.button:active {
+    opacity: 0.5;
+}
+.green-btn {
+    padding: 15px 30px;
+    font-size: large;
+    background-color: rgb(10, 119, 55);
+}
+#submit-btn {
+    visibility: hidden;
+}
 
 /* 
    Styles for Data Table used in display.php 
