@@ -56,7 +56,8 @@ img {
     padding: 10px;
     height: 190px;
     width: 220px;
-    flex-flow: column wrap;
+    overflow: overlay;
+    flex-flow: row wrap;
 }
 #cart-items div {margin: 5px;}
 
