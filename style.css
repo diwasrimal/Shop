@@ -24,26 +24,33 @@ body {
 }
 
 img {
-    width: 190px;
-    min-height: 275px;
+    /* max-width: 190px;
+    min-height: 275px; */
+    width: auto;
+    max-height: 200px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-#cart-and-submit {
+#cart-and-form {
     display: flex;
+    flex-wrap: wrap;
     visibility: hidden;
     align-items: center;
     justify-content: space-around;
     margin-top: 50px;
 }
 
+/* Cart and form container */
 #cart-and-form {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
+/* 
+    Cart 
+*/
 #cart {
     display: flex;
     align-items: center;
@@ -55,20 +62,39 @@ img {
     display: flex;
     padding: 10px;
     height: 190px;
-    width: 220px;
+    min-width: 200px;
+    max-width: 310px;
     overflow: overlay;
     flex-flow: row wrap;
 }
-#cart-items div {margin: 5px;}
+#cart-items > div {margin: 5px;}
 
+.cart-img-container {
+    height: 75px;
+    width: min-content;
+    text-align: right;
+
+}
 #cart-items img {
-    width: 50px;
-    min-height: 75px;
+    width: auto;
+    max-height: 70px;
+    /* position: absolute; */
 }
-#cart-icon {
-    width: 150px;
-    min-height: 100px;
+
+.dot{
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(134, 25, 25);
+    position: relative;
+    bottom: 90px;
 }
+
+/* 
+    Form 
+*/
 #input-box > div {
     display: grid;
     gap: 5px 0;
@@ -76,7 +102,6 @@ img {
     font-size: larger;
     font-weight: bolder;
 }
-
 form {
     border: 1px solid white;
     padding: 10px;
@@ -112,7 +137,7 @@ form input:hover {box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);}
     opacity: 0.5;
 }
 .green-btn {
-    padding: 15px 30px;
+    padding: 10px 30px;
     font-size: large;
     background-color: rgb(10, 119, 55);
 }
