@@ -1,11 +1,17 @@
-const clothInfo = {
-    'shoe':   {'image': 'shoes.webp', 'count': 0},
-    'jacket': {'image': 'jacket.jpg', 'count': 0},
-    'hoodie': {'image': 'hoodie.jpg', 'count': 0},
-    'shirt':  {'image': 'shirt.jpg',  'count': 0},
-    'tshirt': {'image': 'tshirt.jpg', 'count': 0},
-    'pant':   {'image': 'pant.jpg',   'count': 0},
-}
+let clothInfo = {
+    'shoe':   {'image': 'shoes.webp',  'count': 0},
+    'jacket': {'image': 'jacket.jpg',  'count': 0},
+    'hoodie': {'image': 'hoodie.jpg',  'count': 0},
+    'shirt':  {'image': 'shirt.jpg',   'count': 0},
+    'tshirt': {'image': 'tshirt.jpg',  'count': 0},
+    'pant':   {'image': 'pant.jpg',    'count': 0},
+    'jersey': {'image': 'jersey.webp', 'count': 0},
+    'boots':  {'image':  'boots.webp', 'count': 0},
+    'hat':    {'image': 'hat.webp',    'count': 0},
+    'skirt':  {'image': 'skirt.jpg',   'count': 0},
+    'bag':    {'image': 'bag.jpg',     'count': 0},
+    'blazers':{'image': 'blazers.jpg', 'count': 0},
+  }
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -19,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         clothBtns[i].onclick = () => {
             show(cartAndFormContainer);
+            show(submitBtn);
             let clothType = clothBtns[i].dataset.cloth;
             clothInfo[clothType]['count']++;
             
