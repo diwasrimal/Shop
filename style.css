@@ -38,8 +38,17 @@ img {
     position: relative;
 }
 
-[data-price]::before {
+[data-price]:hover::before {
     content: attr(data-price);
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 10px;
+    left: 20%;
+    right: 20%;
+    padding: 7px;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: rgb(126, 75, 245);
 
 }
 
