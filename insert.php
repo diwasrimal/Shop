@@ -1,4 +1,34 @@
-<html>
+<?php
+
+// $conn = mysqli_connect('localhost', 'root', '', 'shop');
+
+// if (!$conn)
+//     die("Error! ". mysqli_connect_error());
+
+if (isset($_GET['submit'])) {
+    $name = $_GET['name'];
+    $address = $_GET['address'];
+    $deadline = $_GET['deadline'];
+    $email = $_GET['email'];
+    
+}
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <html>
     <head>
         <title>Message!</title>
         <style>
@@ -23,28 +53,28 @@
 
 <?php
 
-// Make a connection with database 
-$conn = mysqli_connect("localhost", "root", "", "test");
+// // Make a connection with database 
+// $conn = mysqli_connect("localhost", "root", "", "test");
 
-if (!$conn) 
-    die("Error ! " .mysqli_connect_error());
+// if (!$conn) 
+//     die("Error ! " .mysqli_connect_error());
 
-if (isset($_GET['submit'])) {
-    $name = $_GET['name'];
-    $age = $_GET['age'];
-    $edu = $_GET['edu'];
-    $email = $_GET['email'];
-}
+// if (isset($_GET['submit'])) {
+//     $name = $_GET['name'];
+//     $age = $_GET['age'];
+//     $edu = $_GET['edu'];
+//     $email = $_GET['email'];
+// }
 
-$sql = "INSERT INTO clients VALUES ( NULL, '$name', $age, '$edu', '$email')";
-if (mysqli_query($conn, $sql))
-    $message = "Data Entered Successfully!";
-else
-    $message = "Error!";
+// $sql = "INSERT INTO clients VALUES ( NULL, '$name', $age, '$edu', '$email')";
+// if (mysqli_query($conn, $sql))
+//     $message = "Data Entered Successfully!";
+// else
+//     $message = "Error!";
     
-echo "<div id='message-box'>$message</div>"
+// echo "<div id='message-box'>$message</div>"
 
 ?>
 
 </body>
-</html>
+</html> -->

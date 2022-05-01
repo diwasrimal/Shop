@@ -11,7 +11,7 @@ let clothInfo = {
     'skirt':  {'image': 'skirt.jpg',   'count': 0},
     'bag':    {'image': 'bag.jpg',     'count': 0},
     'blazers':{'image': 'blazers.jpg', 'count': 0},
-  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function bringImage (clothType) {
+function bringImage(clothType) {
     let clothImageName = clothInfo[clothType]['image'];
     let clothCount = clothInfo[clothType]['count'];
 

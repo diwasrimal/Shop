@@ -33,6 +33,16 @@ img {
     border-radius: 5px;
 }
 
+/* Using ::before to show price when hovered on add to cart btn */
+[data-price] {
+    position: relative;
+}
+
+[data-price]::before {
+    content: attr(data-price);
+
+}
+
 #cart-and-form {
     display: flex;
     flex-wrap: wrap;
