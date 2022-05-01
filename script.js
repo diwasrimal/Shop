@@ -15,11 +15,12 @@ let clothInfo = {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    var cartAndFormContainer = document.getElementById('cart-and-form');
-    var submitBtn = document.getElementById('submit-btn');
-    var clothBtns = document.getElementsByClassName('button add-to-cart');
-    var cart = document.getElementById('cart-items');
-    var clearCartBtn = document.getElementById('clear-cart');
+    let cartAndFormContainer = document.getElementById('cart-and-form');
+    let submitBtn = document.getElementById('submit-btn');
+    let clothBtns = document.getElementsByClassName('button add-to-cart');
+    let cart = document.getElementById('cart-items');
+    let totalPrice = document.getElementById('total-price');
+    let clearCartBtn = document.getElementById('clear-cart');
 
     for (let i = 0; i < clothBtns.length; i++) {
 
@@ -27,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
             show(cartAndFormContainer);
             show(submitBtn);
             let clothType = clothBtns[i].dataset.cloth;
+            let clothPrice = clothBtns[i].dataset.price;
+            addPrice(clothPrice);
+
             clothInfo[clothType]['count']++;
             
             let clothCount = clothInfo[clothType]['count'];
@@ -40,47 +44,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById(clothCountId).innerHTML = clothCount;
                 show(document.getElementById(clothCountId));
             }
+
         }
     }
     // When you clear the cart
     clearCartBtn.onclick = () => {
         cart.innerHTML = null;
+        totalPrice.innerHTML = 0;
         hide(cartAndFormContainer);
+        hide(submitBtn);
 
         Object.keys(clothInfo).forEach(key => {
             clothInfo[key]['count'] = 0;
         })
     }
+    
+    function bringImage(clothType) {
+        let clothImageName = clothInfo[clothType]['image'];
+        let clothCount = clothInfo[clothType]['count'];
+
+        let imageString = `<img src='images/${clothImageName}'>`;
+        let countString = `<button class="dot" id="${clothType}">${clothCount}</button>`
+        return `<div class="cart-img-container">${imageString}${countString}</div>`
+    }
+
+    function addPrice(price) {
+        // convert price to number and then add to the total price
+        let addedPrice = Number(totalPrice.innerHTML.slice(1)) + Number(price.slice(1));
+        totalPrice.innerHTML = `$${addedPrice}`;
+    }
+
+    function hide(elem) {
+        elem.style.visibility = 'hidden';
+    }
+    function show(elem) {
+        elem.style.visibility = 'visible';
+    }
+
 });
-
-function bringImage(clothType) {
-    let clothImageName = clothInfo[clothType]['image'];
-    let clothCount = clothInfo[clothType]['count'];
-
-    let imageString = `<img src='images/${clothImageName}'>`;
-    let countString = `<button class="dot" id="${clothType}">${clothCount}</button>`
-    return `<div class="cart-img-container">${imageString}${countString}</div>`
-}
-
-function increaseCount(clothType) {
-    let count = clothInfo[clothType]['count'];
-    document.getElementById(`${clothType}-count`).innerHTML = count;
-}
-
-function hide(elem) {
-    elem.style.visibility = 'hidden';
-}
-function show(elem) {
-    elem.style.visibility = 'visible';
-}
-
 
 // Algorithm
 
 // when item added to cart
     // show form
     // count occurence of that item's img
-        // if first occurence
+    // if first occurence
             // add inside cart
                 // generate HTML string
             // find image inside cart

@@ -42,14 +42,14 @@ img {
     content: attr(data-price);
     position: absolute;
     bottom: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
     left: 20%;
     right: 20%;
-    padding: 7px;
+    padding: 10px;
     border-radius: 3px;
     font-weight: bold;
+    font-size: larger;
     background-color: rgb(126, 75, 245);
-
 }
 
 #cart-and-form {
@@ -73,9 +73,9 @@ img {
 */
 #cart {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
-#cart > div {margin: 15px;}
 
 #cart-items {
     border: 1px solid white;
@@ -86,6 +86,7 @@ img {
     max-width: 310px;
     overflow: overlay;
     flex-flow: row wrap;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 #cart-items > div {margin: 5px;}
 
@@ -111,6 +112,14 @@ img {
     position: relative;
     bottom: 90px;
 }
+
+#bill {
+    margin: 5px;
+    padding: 5px;
+}
+
+
+
 
 /* 
     Form 
